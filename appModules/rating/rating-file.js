@@ -4,7 +4,7 @@ async function makeRatingFile(path, array) {
   const ratingFile = await fs.readFile(path, "utf8");
   const ratingArray = JSON.parse(ratingFile);
 
-  array.forEach((item) => {
+  ratingArray.forEach((item) => {
     if (!ratingArray.find((el) => el.id === item.id)) {
       let obj = {
         id: item.id,
